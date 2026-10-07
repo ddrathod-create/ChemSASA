@@ -8,7 +8,7 @@ from collections import defaultdict
 import json
 
 # %%
-with open("res-func-grp.json") as f:
+with open("params/res-func-grp.json") as f:
     res = json.load(f)
 
 BACKBONE = res["backbone"]
@@ -468,34 +468,23 @@ class SASA:
         return paths
 
 # %%
-#universe = mda.Universe("pcna-monomer-sim/topol.tpr", "pcna-monomer-sim/traj_100ps.trr")
 #inputs for freesasa calculations
-classifier = "/home/dhanashri/Projects/sasa/config-files/freesasa_richards1977.config"
-'''sasa = SASA(
-    topology="pcna-monomer-sim/topol.tpr",       
-    trajectory="pcna-monomer-sim/traj_100ps.trr",         
-    unique_residues=UniqueResidues(),
-    classifier_path=classifier
-)'''
-
+classifier = "params/freesasa_richards1977.config"
 
 sasa = SASA(
-    topology="sylvia-test-files/proteins.tpr",       
-    trajectory="sylvia-test-files/prot_traj4dhana.trr",         
+    topology="test-files/proteins.tpr",       
+    trajectory="test-files/prot_traj4dhana.trr",         
     unique_residues=UniqueResidues(),
     classifier_path=classifier
 )
-#sasa = SASA(topology="sylvia-test-files/test2/dhana_protein.tpr", trajectory="sylvia-test-files/test2/dhana_protein.trr",unique_residues=UniqueResidues(),classifier_path=classifier)
+
 sasa.run_trajectory()
 sasa.print_sanity_checks()
 sasa.write_output_files()
 
 # %%
 #for just a pdb
-classifier = "/home/dhanashri/Projects/sasa/config-files/freesasa_richards1977.config"
-sasa = SASA(topology="/mnt/c/Users/Dhanashri/ASU Dropbox/Dhanashri Rathod/BDC-comp/FRESEAN-PCNA/PCNA-pdbs-f/trimer.pdb", unique_residues=UniqueResidues(), classifier_path=classifier)
-#sasa = SASA(topology="sylvia-test-files/traj9.pdb", unique_residues=UniqueResidues(), classifier_path=classifier)
-sasa.run_structure()
+sasa = SASA(topology="test-files/traj9.pdb", unique_residues=UniqueResidues(), classifier_path=classifier)
 sasa.run_structure()
 sasa.print_sanity_checks()
 sasa.write_output_files()
