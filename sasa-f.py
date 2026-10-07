@@ -1,13 +1,10 @@
 # %%
 import numpy as np
 import MDAnalysis as mda
-import pandas as pd
 import freesasa
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
-from matplotlib.pylab import dtype
-from matplotlib.pyplot import stem
 import json
 
 # %%
