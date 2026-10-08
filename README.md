@@ -24,5 +24,5 @@ conda env create -f environment.yaml
 Activate the environment:
 
 ```bash
-conda activate sasamap
+conda activate chemsasa-env
 ```
