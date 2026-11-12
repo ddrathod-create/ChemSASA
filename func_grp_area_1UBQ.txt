@@ -1,0 +1,31 @@
+# ==========================================================
+# SASA — Functional-Group-wise Areas
+# ----------------------------------------------------------
+# This program computes solvent-accessible surface area (SASA)
+# from a molecular structure or trajectory using FreeSASA and MDAnalysis Python libraries,
+# broken down by atom, residue, and functional group.
+# ----------------------------------------------------------
+# This file: Functional-Group-wise Areas
+# Units: Angstrom^2
+# Author: Dhanashri Rathod
+# Generated: 2026-11-11 20:10:18
+# Structure/Topology: 1UBQ.pdb
+# Classifier: /home/dhanashri/Projects/sasa/config-files/freesasa_richards1977.config
+# Algorithm: LeeRichards, probe-radius: 1.4, n-slices: 100
+# Selection: protein and not name H*
+# Residue count: 76
+# Atom count: 602
+# ==========================================================
+#
+# functional_group  area(Å²)
+aliphatic_C          2144.916563014086
+amide_N              268.9277146788053
+anion_O              644.2144421531278
+aromatic_C           121.88147095085507
+carbonyl_O           771.1283117122506
+cation_N             683.6940450667613
+cysteine_S           0.0
+histidine_N          39.57344036823859
+hydroxyl_O           135.3679373568591
+methionine_S         5.4064077762892495
+tryptophan_N         0.0

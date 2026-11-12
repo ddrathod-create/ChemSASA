@@ -1,0 +1,21 @@
+# ==========================================================
+# SASA — Total Area
+# ----------------------------------------------------------
+# This program computes solvent-accessible surface area (SASA)
+# from a molecular structure or trajectory using FreeSASA and MDAnalysis Python libraries,
+# broken down by atom, residue, and functional group.
+# ----------------------------------------------------------
+# This file: Total Area
+# Units: Angstrom^2
+# Author: Dhanashri Rathod
+# Generated: 2026-11-11 20:10:18
+# Structure/Topology: 1UBQ.pdb
+# Classifier: /home/dhanashri/Projects/sasa/config-files/freesasa_richards1977.config
+# Algorithm: LeeRichards, probe-radius: 1.4, n-slices: 100
+# Selection: protein and not name H*
+# Residue count: 76
+# Atom count: 602
+# ==========================================================
+#
+# total_area(Å²)
+4815.1103330772685
