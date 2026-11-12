@@ -4,7 +4,10 @@ BACKBONE = {'N': 'amide_N',
  'O': 'carbonyl_O',
  'OXT': 'anion_O',
  'OT1': 'anion_O',
- 'OT2': 'anion_O'}
+ 'OT2': 'anion_O',
+ 'OC1': 'anion_O',
+ 'OC2': 'anion_O'
+  }
 
 SIDECHAINS = {'ALA': {'CB': 'aliphatic_C'},
  'GLY': {},
