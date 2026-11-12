@@ -15,46 +15,45 @@ cd ChemSASA
 
 ### Create the Python environment
 
-The required Python packages and tested package versions are specified in `environment.yaml`. Create the Conda environment using:
+The required Python packages and tested package versions are specified in `environment.yaml`.
 
 ```bash
 conda env create -f environment.yaml
-```
-
-Activate the environment:
-
-```bash
 conda activate chemsasa
 ```
 
 ## Parameters
 
-The `params/` directory contains the parameter files used by ChemSASA for assigning atoms to chemical functional groups and defining atomic radii for SASA calculations.
+The parameter files used by ChemSASA are provided in `config-files/`.
 
-- **`res-func-grp.json`** defines the assignment of protein atoms to the chemical functional groups used by ChemSASA. The functional-group classification is based on the solute partitioning model (SPM) [1,2].
+- **`freesasa_richards1977.config`** contains the atomic radii used by FreeSASA for SASA calculations, based on the van der Waals radii of Richards [6]. Users can provide a different FreeSASA configuration file to use another set of atomic radii.
+- The chemical functional-group definitions used by ChemSASA are based on the functional-group classification used in the SPM [1,2].
 
-- **`freesasa_richards1977.config`** contains the atomic radii used by FreeSASA for SASA calculations, based on the van der Waals radii of Richards [6].
+## Example notebook and data
 
-## Usage
+`chemsasa.py` contains the complete ChemSASA implementation in a single Python file. The individual classes are also provided as separate modules in `chemsasa_modules/` for use in custom workflows.
 
-An example workflow using the individual ChemSASA modules is provided in `ChemSASA_example.ipynb`. The notebook demonstrates how to set up and run ChemSASA for both a single protein structure and an MD trajectory.
+- **`res_func_grp`** contains the chemical functional-group definitions used to assign amino acid atoms to their corresponding functional groups.
+- **`UniqueResidues`** reads the topology and counts the atoms assigned to each chemical functional group.
+- **`SASA`** performs the SASA calculations for structures and MD trajectories and assigns the calculated atomic SASA values to their corresponding chemical functional groups.
 
-The repository is organized as follows:
+`examples/ChemSASA_example.ipynb` provides detailed example workflows for a PDB structure and an MD trajectory. The examples use ubiquitin (`1UBQ`) as the PDB structure and a short energy-minimized 1UBQ trajectory generated for the trajectory calculation.
+
+The main repository organization is:
 
 ```text
 ChemSASA/
 ├── chemsasa.py
-├── ChemSASA_example.ipynb
-├── chemsasa-modules/
-│   └── ...
-├── params/
-│   ├── res-func-grp.json
-│   └── freesasa_richards1977.config
+├── chemsasa_modules/
+├── config-files/
+├── examples/
+│   ├── ChemSASA_example.ipynb
+│   └── example-data/
 ├── environment.yaml
 └── README.md
 ```
 
-The individual ChemSASA classes are provided in `chemsasa-modules/` and are used in the example notebook. The complete implementation is also available in `chemsasa.py`.
+The example notebook includes the complete workflow and sanity checks for both calculations. Reference output files are provided with the example data in the corresponding `output-files/` directories. 
 
 ## References
 
