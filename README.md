@@ -27,7 +27,7 @@ conda activate chemsasa
 The parameter files used by ChemSASA are provided in `config-files/`.
 
 - **`freesasa_richards1977.config`** contains the atomic radii used by FreeSASA for SASA calculations, based on the van der Waals radii of Richards [6]. Users can provide a different FreeSASA configuration file to use another set of atomic radii.
-- The chemical functional-group definitions used by ChemSASA are based on the functional-group classification used in the SPM [1,2].
+- **`res-func-grp.json`** contains the chemical functional-group definitions used by chemsasa.py to assign amino acid atoms to their corresponding functional groups. The definitions are based on the functional-group classification used in the SPM [1,2].
 
 ## Example notebook and data
 
