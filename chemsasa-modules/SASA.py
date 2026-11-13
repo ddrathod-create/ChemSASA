@@ -78,7 +78,7 @@ class SASA:
     def calculate_sasa_structure(self):
         """Uses freesasa's own file parser directly on self.topology
         returns freesasa.Structure and freesasa.Result objects."""
-        structure = freesasa.Structure(self.topology, classifier=self.classifier)
+        structure = freesasa.Structure(self.topology, classifier=self.classifier, options={'hetatm': True})
         result = freesasa.calc(structure, parameters=self.parameters)
         return structure, result
 
