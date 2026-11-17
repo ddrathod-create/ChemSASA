@@ -1,8 +1,8 @@
 # ChemSASA
 
-ChemSASA is a Python-based tool for calculating solvent-accessible surface area (SASA) from protein structures and molecular dynamics (MD) trajectories. In addition to total and atom-wise SASA, ChemSASA resolves solvent-accessible surface area by chemical functional group based on the functional-group classification used in the **solute partitioning model (SPM)** [1,2].
+**Chemical Functional Group Solvent-Accessible Surface Area (ChemSASA)** is a Python-based tool for calculating solvent-accessible surface area (SASA) from protein structures and molecular dynamics (MD) trajectories. In addition to total and atom-wise SASA, ChemSASA resolves SASA by chemical functional group based on the functional-group classification used in the **solute partitioning model (SPM)** [1,2].
 
-ChemSASA uses [MDAnalysis](https://www.mdanalysis.org/) [3,4] for handling molecular structures and trajectories and [FreeSASA](https://freesasa.github.io/) [5] for solvent-accessible surface area calculations.
+ChemSASA uses [MDAnalysis](https://www.mdanalysis.org/) [3,4] for reading molecular structures and trajectories and [FreeSASA](https://freesasa.github.io/) [5] for solvent-accessible surface area calculations. The current ChemSASA workflow uses the Lee-Richards algorithm with a probe radius of 1.4 Å, 100 slices, and the Richards (1977) van der Waals radii [6]. Users can change the probe radius and number of slices or use the Shrake-Rupley algorithm by modifying the corresponding FreeSASA parameters in the `SASA` module. A different set of atomic radii can also be used by providing a different FreeSASA classifier file.
 
 ## Installation
 
